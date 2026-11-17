@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabungan-Ku | Celengan Pelajar</title>
+  <!-- Menghubungkan CSS dan Manifest PWA -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4f46e5">
+</head>
+<body>
+  <div class="container">
+    <!-- Header & Tombol Dark Mode / Notifikasi -->
+    <header>
+      <h1>💰 Tabungan-Ku</h1>
+      <div class="header-actions">
+        <button id="btn-notif" title="Aktifkan Notifikasi">🔔</button>
+        <button id="btn-theme" title="Ganti Tema">🌙</button>
+      </div>
+    </header>
+
+    <!-- Card 1: Dashboard & Progress Bar -->
+    <section class="card dashboard">
+      <h2>Target: <span id="nama-target">Belum diatur</span></h2>
+      <div class="angka-besar">
+        <span id="total-tabungan">Rp 0</span> / <span id="nominal-target">Rp 0</span>
+      </div>
+      
+      <!-- Visualisasi Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p class="persen-text">Terkumpul: <strong id="persen-angka">0%</strong></p>
+    </section>
+
+    <!-- Card 2: Atur Target Tabungan -->
+    <section class="card">
+      <h3>🎯 Atur Target Impian</h3>
+      <form id="form-target">
+        <input type="text" id="input-nama-target" placeholder="Nama barang (misal: Sepatu Baru)" required>
+        <input type="number" id="input-nominal-target" placeholder="Harga target (Rp)" required>
+        <button type="submit" class="btn-primary">Simpan Target</button>
+      </form>
+    </section>
+
+    <!-- Card 3: Catat Uang Jajan / Tabungan -->
+    <section class="card">
+      <h3>💵 Kelola Uang Jajan</h3>
+      <form id="form-transaksi">
+        <input type="number" id="input-nominal" placeholder="Masukkan nominal (Rp)" required>
+        <div class="btn-group">
+          <button type="button" id="btn-nabung" class="btn-success">+ Nabung</button>
+          <button type="button" id="btn-jajan" class="btn-danger">- Dipakai Jajan</button>
+        </div>
+      </form>
+      <button id="btn-reset" class="btn-outline">Reset Semua Data</button>
+    </section>
+
+    <!-- Card 4: Tips Keuangan Pintar Random -->
+    <section class="card tips-box">
+      <h4>💡 Tips Keuangan Hari Ini:</h4>
+      <p id="teks-tips">Memuat tips...</p>
+    </section>
+  </div>
+
+  <!-- Menghubungkan JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
